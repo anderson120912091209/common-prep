@@ -1,3 +1,4 @@
+import CustomCursor from "@/app/components/CustomCursor";
 import type { Metadata } from "next";
 import { Inter, Inter_Tight, Special_Elite } from "next/font/google";
 import { Inter as InterMono } from 'next/font/google';
@@ -38,6 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${inter_tight.variable} ${inter_mono.variable} ${special_elite.variable}`}>
+        <CustomCursor />
         {children}
       </body>
     </html>

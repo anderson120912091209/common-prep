@@ -18,12 +18,20 @@ export default function Home() {
                 </span>
               </h1>
               <div className="text-lg font-light text-white/70 leading-relaxed mb-12">
-                <p>We leverage artificial intelligence to:</p>
-                {/* Use the new custom list */}
-                <ol className="custom-numbered-list mt-4 space-y-2">
-                  <li>Democratize elite college prep materials.</li>
-                  <li>Provide 24/7 support with a system that never sleeps.</li>
-                </ol>
+                <p>
+                  We leverage{" "}
+                  <span className="custom-underline-green text-white/80 hover:text-white cursor-pointer transition-all 
+                  duration-300 hover:scale-105 inline-block">
+                    artificial intelligence
+                  </span>{" "}
+                  & tutors from{" "}
+                  <span className="custom-underline-green text-white/80 hover:text-white transition-all duration-300 hover:scale-105 inline-block">
+                    elite universities
+                  </span>{" "}
+                  to cost down access to elite college prep materials, provide a clone of your tutor who never sleeps, and an evaluation of your
+                  college readiness by real admission officers.
+                </p>
+               
               </div>
               <button className="group relative bg-white text-black px-8 py-4 rounded-full font-medium text-sm tracking-wide transition-all duration-300 hover:bg-white/90 hover:scale-100">
                 Start Your Journey
