@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Navigation = () => {
   return (
@@ -8,7 +9,7 @@ const Navigation = () => {
       <div className="flex items-center justify-between px-8 py-2.5 rounded-full border border-white/15 backdrop-blur-xl bg-white/5 shadow-lg backdrop-saturate-150">
         {/* Logo */}
         <Link href="/" className="text-white font-medium text-lg tracking-wide whitespace-nowrap">
-          Common Prep
+          <Image src="/TextLogoWhite.svg" alt="Common Prep" width={180} height={100} />
         </Link>
 
         {/* Navigation Links */}

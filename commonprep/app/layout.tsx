@@ -1,8 +1,29 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Inter_Tight, Special_Elite } from "next/font/google";
+import { Inter as InterMono } from 'next/font/google';
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ 
+  subsets: ["latin"],
+  variable: '--font-inter', 
+});
+
+const inter_tight = Inter_Tight({
+  subsets: ["latin"],
+  variable: '--font-inter-tight',
+});
+
+const inter_mono = InterMono({
+  subsets: ["latin"],
+  variable: '--font-mono',
+  weight: "400"
+});
+
+const special_elite = Special_Elite({
+  subsets: ["latin"],
+  variable: '--font-typewriter',
+  weight: "400"
+});
 
 export const metadata: Metadata = {
   title: "Common Prep",
@@ -16,12 +37,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-      </head>
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.variable} ${inter_tight.variable} ${inter_mono.variable} ${special_elite.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }

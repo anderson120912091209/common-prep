@@ -104,3 +104,25 @@ body {
 .sand-animate {
   animation: sand-shift 20s ease-in-out infinite;
 }
+
+/* Custom list for hero section */
+.custom-numbered-list {
+  list-style: none;
+  counter-reset: custom-counter;
+  padding-left: 0;
+}
+.custom-numbered-list li {
+  counter-increment: custom-counter;
+  display: flex;
+  align-items: flex-start;
+}
+.custom-numbered-list li::before {
+  content: counter(custom-counter);
+  font-family: var(--font-inter);
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 100; /* bold */
+  color: rgba(219, 219, 219, 0.672);
+  margin-right: 0.75rem; /* space between number and text */
+  text-align: right;
+  min-width: 1.5rem; /* ensures alignment */
+}
