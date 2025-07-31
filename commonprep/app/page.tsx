@@ -21,11 +21,11 @@ export default function Home() {
                 <p>
                   We leverage{" "}
                   <span className="custom-underline-green text-white/80 hover:text-white cursor-pointer transition-all 
-                  duration-300 hover:scale-105 inline-block">
+                  duration-300 inline-block">
                     artificial intelligence
                   </span>{" "}
                   & tutors from{" "}
-                  <span className="custom-underline-green text-white/80 hover:text-white transition-all duration-300 hover:scale-105 inline-block">
+                  <span className="custom-underline-green text-white/80 hover:text-white transition-all duration-300 inline-block">
                     elite universities
                   </span>{" "}
                   to cost down access to elite college prep materials, provide a clone of your tutor who never sleeps, and an evaluation of your
@@ -46,7 +46,7 @@ export default function Home() {
 
         {/* AI Features Section - Redesigned */}
         <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900 opacity-50"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-black via-emerald-900 to-black opacity-0"></div>
           <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-500/10 rounded-full blur-3xl animate-pulse" style={{animationDelay:'2s'}}></div>
           <div className="text-left max-w-4xl px-8 z-10 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
