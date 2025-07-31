@@ -1,47 +1,51 @@
 'use client'
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const CustomCursor = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const dotRef = useRef<HTMLDivElement>(null);
+  const circleRef = useRef<HTMLDivElement>(null);
   const [isPointer, setIsPointer] = useState(false);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+    let animationFrameId: number;
 
-      const target = e.target as HTMLElement;
-      setIsPointer(
-        window.getComputedStyle(target).getPropertyValue('cursor') === 'pointer'
-      );
+    const updateCursor = (e: MouseEvent) => {
+      animationFrameId = requestAnimationFrame(() => {
+        if (dotRef.current && circleRef.current) {
+          dotRef.current.style.left = `${e.clientX}px`;
+          dotRef.current.style.top = `${e.clientY}px`;
+
+          circleRef.current.style.left = `${e.clientX}px`;
+          circleRef.current.style.top = `${e.clientY}px`;
+
+          const target = e.target as HTMLElement;
+          const pointer = window.getComputedStyle(target).getPropertyValue('cursor') === 'pointer';
+          setIsPointer(pointer);
+
+          const cursorSize = pointer ? 30 : 20;
+          circleRef.current.style.width = `${cursorSize}px`;
+          circleRef.current.style.height = `${cursorSize}px`;
+          circleRef.current.className = `custom-cursor-circle${pointer ? ' pointer' : ''}`;
+        }
+      });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', updateCursor);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mousemove', updateCursor);
+      cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
-  const cursorSize = isPointer ? 30 : 20;
-
+  // 初始渲染只 render DOM 節點
   return (
     <>
-      <div 
-        className="custom-cursor-dot" 
-        style={{ left: `${position.x}px`, top: `${position.y}px` }}
-      />
-      <div 
-        className={`custom-cursor-circle ${isPointer ? 'pointer' : ''}`}
-        style={{ 
-          left: `${position.x}px`, 
-          top: `${position.y}px`,
-          width: `${cursorSize}px`,
-          height: `${cursorSize}px`
-        }}
-      />
+      <div ref={dotRef} className="custom-cursor-dot" />
+      <div ref={circleRef} className="custom-cursor-circle" />
     </>
   );
 };
 
-export default CustomCursor; 
+export default CustomCursor;
