@@ -14,12 +14,11 @@ const Navigation = () => {
 
         {/* Navigation Links */}
         <div className="hidden md:flex items-center space-x-10">
-          <Link href="/platform" className="text-white/70 hover:text-white transition-colors text-sm">How it works</Link>
-          <Link href="/features" className="text-white/70 hover:text-white transition-colors text-sm">Programs</Link>
-          <Link href="/pricing" className="text-white/70 hover:text-white transition-colors text-sm">Consultants & Tutors</Link>
+          <Link href="/platform" className="text-white/70 hover:text-white transition-colors text-sm">Platform</Link>
+          <Link href="/features" className="text-white/70 hover:text-white transition-colors text-sm">Features</Link>
           <Link href="/pricing" className="text-white/70 hover:text-white transition-colors text-sm">Pricing</Link>
+          <Link href="/tutors" className="text-white/70 hover:text-white transition-colors text-sm">Tutors</Link>
           <Link href="/about" className="text-white/70 hover:text-white transition-colors text-sm">About</Link>
-          
         </div>
 
         {/* CTA Button */}
