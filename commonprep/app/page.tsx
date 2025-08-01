@@ -24,12 +24,11 @@ export default function Home() {
                   duration-300 inline-block">
                     artificial intelligence
                   </span>{" "}
-                  & tutors from{" "}
+                  & tutors with{" "}
                   <span className="custom-underline-green text-white/80 hover:text-white transition-all duration-300 inline-block">
-                    elite universities
+                    specialized expertise
                   </span>{" "}
-                  to cost down access to elite college prep materials, provide a clone of your tutor who never sleeps, and an evaluation of your
-                  college readiness by real admission officers.
+                  to cost down access to elite educational resources and opportunities for elite college admissions.
                 </p>
                
               </div>
