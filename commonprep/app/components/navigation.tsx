@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import LanguageSwitcher from './LanguageSwitcher'
 
 const Navigation = () => {
   return (
@@ -21,10 +22,13 @@ const Navigation = () => {
           <Link href="/about" className="text-white/70 hover:text-white transition-colors text-sm">About</Link>
         </div>
 
-        {/* CTA Button */}
-        <Link href="/get-started" className="px-5 py-1.5 rounded-full border border-white/25 text-white text-sm backdrop-blur-sm hover:bg-white/10 transition-colors">
-          Get Started
-        </Link>
+        {/* Auth Buttons & Language Switcher */}
+        <div className="flex items-center space-x-4">
+          <Link href="/get-started" className="px-5 py-1.5 rounded-full border border-white/25 text-white text-sm backdrop-blur-sm hover:bg-white/10 transition-colors">
+            Get Started
+          </Link>
+          <LanguageSwitcher />
+        </div>
       </div>
     </nav>
   )
