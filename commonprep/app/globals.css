@@ -11,10 +11,28 @@
   --font-sans: var(--font-inter);
 }
 
+@layer utilities {
+  .hover-glow::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250%;
+    padding-bottom: 250%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 0;
+  }
+  .group:hover .hover-glow::after {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: black;
 }
 
 /* Custom font classes */

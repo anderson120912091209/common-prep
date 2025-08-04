@@ -17,7 +17,7 @@ const tutors: (Tutor | null)[] = [
     name: 'Anderson Chen',
     university: 'NTU & EPFL Chemical Engineering',
     role: 'Founder',
-    experience: 'Scored perfect marks in IB Mathematics, Biology and History',
+    experience: 'Predicted 34/45, Improved final score to 40/45 in 3 months, and 7/7 in Mathematics, Biology, History and English Literature Exams.',
     tags: [''],
   },
   {

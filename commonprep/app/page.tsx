@@ -1,5 +1,6 @@
 import Navigation from './components/navigation';
 import Spline from '@splinetool/react-spline/next';
+import FeaturedPrograms from './components/FeaturedPrograms';
 
 export default function Home() {
   return (
@@ -7,17 +8,17 @@ export default function Home() {
       <Navigation />
       <main className="flex flex-col">
         {/* Hero Section */}
-        <section className="min-h-screen flex items-center">
-          <div className="w-1/2 pl-24 pr-16">
-            <div className="max-w-md">
-              <h1 className="text-7xl font-serif leading-tight mb-8">
+        <section className="min-h-screen flex flex-col md:flex-row items-center justify-center pt-24 md:pt-0">
+          <div className="w-full md:w-1/2 text-center md:text-left px-8 md:pl-24 md:pr-16">
+            <div className="max-w-md mx-auto md:mx-0">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif leading-tight mb-8">
                 the future of
                 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white/80 to-white/60">
                   college prep.
                 </span>
               </h1>
-              <div className="text-lg font-light text-white/70 leading-relaxed mb-12">
+              <div className="text-base md:text-lg font-light text-white/70 leading-relaxed mb-12">
                 <p>
                   We leverage{" "}
                   <span className="custom-underline-green text-white/80 hover:text-white cursor-pointer transition-all 
@@ -38,8 +39,15 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div className="w-1/2 h-screen">
+          <div className="w-full md:w-1/2 h-[50vh] md:h-screen mt-8 md:mt-0">
             <Spline scene="https://prod.spline.design/42kPNCpMxaBLAv9K/scene.splinecode" />
+          </div>
+        </section>
+
+        {/* Featured Programs Section */}
+        <section className="py-24">
+          <div className="flex px-5 justify-center">
+            <FeaturedPrograms />
           </div>
         </section>
 

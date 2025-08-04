@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import LanguageSwitcher from './LanguageSwitcher'
 
 const Navigation = () => {
   return (
@@ -27,7 +26,6 @@ const Navigation = () => {
           <Link href="/get-started" className="px-5 py-1.5 rounded-full border border-white/25 text-white text-sm backdrop-blur-sm hover:bg-white/10 transition-colors">
             Get Started
           </Link>
-          <LanguageSwitcher />
         </div>
       </div>
     </nav>
