@@ -136,21 +136,25 @@ export default function FeaturedPrograms() {
   return (
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-12">
-        <h2 className="text-5xl sm:text-5xl lg:text-5xl font-serif mb-4">Browse Our Programs</h2>
-        <p className="text-lg text-white/70 max-w-3xl mx-auto">Find the perfect prep course to achieve your academic goals.</p>
+        <h2 className="text-5xl sm:text-5xl lg:text-5xl font-serif mb-4">Browse Our 
+          Programs</h2>
+        <p className="text-lg text-white/70 font-light leading-relaxed max-w-3xl mx-auto">Standardized programs, customizable learning experiences.</p>
       </div>
       
       <div className="mb-10 px-4">
         <div className="max-w-2xl mx-auto">
           <div className="relative">
+            <div className="pointer-events-none absolute inset-y-0 left-0 
+            flex items-center pl-5">
+              <Search className="text-zinc-200 z-10" size={20} />
+            </div>
             <input
               type="text"
               placeholder="Search our 100+ programs by name or keyword..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-full backdrop-blur-md text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 transition-all duration-300"
+              className="w-full rounded-full border border-white/10 bg-white/5 py-4 pl-12 pr-5 text-white placeholder-white/50 backdrop-blur-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
             />
-            <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-white/30" size={20} />
           </div>
         </div>
       </div>
@@ -160,9 +164,10 @@ export default function FeaturedPrograms() {
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
-            className={`px-5 py-2 text-sm rounded-full transition-all duration-300 ease-in-out ${
+            className={`px-5 py-2 text-sm rounded-full transition-all 
+              duration-300 ease-in-out ${
               selectedCategory === category
-                ? 'bg-cyan-500 text-white shadow-lg'
+                ? 'bg-emerald-400 text-white shadow-lg'
                 : 'bg-white/5 hover:bg-white/10 text-white/70'
             }`}
           >
@@ -181,7 +186,8 @@ export default function FeaturedPrograms() {
       </div>
       {filteredPrograms.length === 0 && (
         <div className="text-center py-16 col-span-full">
-          <p className="text-white/70">No programs found. Try a different search or category.</p>
+          <p className="text-white/70">No programs found. 
+          Try a different search or category.</p>
         </div>
       )}
     </div>
