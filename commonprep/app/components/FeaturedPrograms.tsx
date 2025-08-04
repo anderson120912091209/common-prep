@@ -153,7 +153,11 @@ export default function FeaturedPrograms() {
               placeholder="Search our 100+ programs by name or keyword..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full rounded-full border border-white/10 bg-white/5 py-4 pl-12 pr-5 text-white placeholder-white/50 backdrop-blur-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
+              className="w-full rounded-full border 
+              border-white/10 bg-white/5 py-4 pl-12 pr-5 text-white 
+              placeholder-white/50 backdrop-blur-md transition-all 
+              duration-300 focus:outline-none focus:ring-1  
+              focus:ring-white-400/100"
             />
           </div>
         </div>

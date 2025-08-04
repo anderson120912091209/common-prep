@@ -53,13 +53,12 @@ export default function Home() {
 
         {/* AI Features Section - Redesigned */}
         <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-black via-emerald-900 to-black opacity-0"></div>
-          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-500/10 rounded-full blur-3xl animate-pulse" style={{animationDelay:'2s'}}></div>
           <div className="text-left max-w-4xl px-8 z-10 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-5xl font-serif mb-6">AI-Powered<br/>Personalization</h2>
-              <p className="text-lg text-white/70">Our platform leverages state-of-the-art artificial intelligence to create a study experience unlike any other. It learns your style, identifies weaknesses, and serves you questions that are perfectly tailored to you.</p>
+              <h2 className="text-5xl font-serif mb-6">High<br/>Personalization</h2>
+              <p className="text-lg text-white/70">Our platform leverages state-of-the-art artificial intelligence 
+              to create a study experience unlike any other. It learns your style, 
+              identifies weaknesses, and serves you questions that are perfectly tailored to you.</p>
             </div>
             <div className="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-md">
               <h3 className="font-semibold mb-4">Dynamic Question Bank</h3>
