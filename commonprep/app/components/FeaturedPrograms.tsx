@@ -29,7 +29,7 @@ const programs: Program[] = [
     id: 1,
     title: 'IB AI HL Math',
     description: 'A concentrated course covering the full IB Higher Level AI Mathematics curriculum.',
-          image: '/MATH1.png',
+          image: '/HIGHMATH.png',
     stats: {
       students: 1240,
       rating: 4.8,
@@ -47,7 +47,7 @@ const programs: Program[] = [
     id: 2,
     title: 'SAT Math Dash',
     description: 'A targeted sprint program designed to rapidly improve your SAT Math score.',
-    image: '/MATH2.png',
+    image: '/SATMATH.png',
     stats: {
       students: 2150,
       rating: 4.9,
@@ -180,7 +180,7 @@ const ProgramCard = ({ program }: ProgramCardProps) => {
           alt={program.title}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover object-[center_40%] transition-transform 
+          className="object-cover object-[center_30%] transition-transform 
           duration-300 group-hover:scale-105"
           priority={program.id <= 3}
         />
@@ -247,7 +247,7 @@ export default function FeaturedPrograms() {
       <div className="text-center mb-12">
         <h2 className="text-5xl sm:text-5xl lg:text-5xl font-serif mb-4">Browse Our 
           Programs</h2>
-        <p className="text-lg dark:text-white/70 text-black/70 font-light leading-relaxed max-w-3xl mx-auto">Standardized programs, customizable learning experiences.</p>
+        <p className="text-lg dark:text-white/70 text-black/70 font-light leading-relaxed max-w-3xl mx-auto">Standardized and transparent programs, with customizable learning experiences.</p>
       </div>
       
       <div className="mb-10 px-4">
@@ -259,7 +259,7 @@ export default function FeaturedPrograms() {
             </div>
             <input
               type="text"
-              placeholder="Search our 100+ programs by name or keyword..."
+              placeholder="Search our programs by name or keyword..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full rounded-full border 

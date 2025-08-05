@@ -34,7 +34,9 @@ export default function Home() {
                 </p>
                
               </div>
-              <button className="group relative dark:bg-white bg-black dark:text-black text-white px-8 py-4 rounded-full font-medium text-sm tracking-wide transition-all duration-300 dark:hover:bg-white/90 hover:bg-black/90 hover:scale-100">
+              <button className="group relative dark:bg-white bg-black dark:text-black 
+              text-white px-8 py-4 rounded-full font-medium text-sm tracking-wide 
+              transition-all duration-300 dark:hover:bg-white/90 hover:bg-black/90 hover:scale-100">
                 Start Your Journey
                 <span className="ml-3 text-xs transition-transform duration-300 group-hover:translate-x-1">→</span>
               </button>
