@@ -11,7 +11,7 @@ const Navigation = () => {
         {/* Logo */}
         <Link href="/" className="font-medium text-lg tracking-wide whitespace-nowrap">
           <Image src="/TextLogoWhite.svg" alt="Common Prep" width={180} height={100} className="dark:brightness-100 brightness-0" />
-        </Link>
+          </Link>
 
         {/* Navigation Links */}
         <div className="hidden md:flex items-center space-x-10">
@@ -32,6 +32,6 @@ const Navigation = () => {
       </div>
     </nav>
   )
-}
+} 
 
 export default Navigation

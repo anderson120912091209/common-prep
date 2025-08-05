@@ -42,7 +42,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${inter_tight.variable} ${inter_mono.variable} ${special_elite.variable} h-full`}>
         <ThemeProvider>
           <CustomCursor />
-          {children}
+        {children}
         </ThemeProvider>
       </body>
     </html>
