@@ -3,16 +3,23 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Search } from 'lucide-react';
+import Image from 'next/image';
 
 interface Program {
   id: number;
   title: string;
   description: string;
+  image: string;
+  stats: {
+    students: number;
+    rating: number;
+    lessons: number;
+  };
   tags: {
     pacing: string;
     duration: string;
     benefit: string;
-    field:string;
+    field: string;
   };
   accentColor: 'cyan' | 'purple' | 'green';
 }
@@ -22,11 +29,17 @@ const programs: Program[] = [
     id: 1,
     title: 'IB AI HL Math',
     description: 'A concentrated course covering the full IB Higher Level AI Mathematics curriculum.',
+    image: '/public/MATH.png',
+    stats: {
+      students: 1240,
+      rating: 4.8,
+      lessons: 24,
+    },
     tags: {
       pacing: 'Intensive',
       duration: '1 Month',
       benefit: 'Score Boost',
-      field: 'IB Math',
+      field: 'Math',
     },
     accentColor: 'cyan',
   },
@@ -34,11 +47,17 @@ const programs: Program[] = [
     id: 2,
     title: 'SAT Math Dash',
     description: 'A targeted sprint program designed to rapidly improve your SAT Math score.',
+    image: '/subjects/sat-math.jpg',
+    stats: {
+      students: 2150,
+      rating: 4.9,
+      lessons: 16,
+    },
     tags: {
       pacing: 'Sprint',
       duration: 'Few Weeks',
       benefit: 'Score Boost',
-      field: 'SAT Math',
+      field: 'Math',
     },
     accentColor: 'purple',
   },
@@ -46,11 +65,71 @@ const programs: Program[] = [
     id: 3,
     title: 'AP Physics C Prep',
     description: 'A comprehensive review of both Mechanics and E&M for the AP exam.',
+    image: '/subjects/physics.jpg',
+    stats: {
+      students: 890,
+      rating: 4.7,
+      lessons: 32,
+    },
     tags: {
       pacing: 'Slow Paced',
       duration: '3 Months',
       benefit: 'In-depth',
-      field: 'IB Physics',
+      field: 'Physics',
+    },
+    accentColor: 'green',
+  },
+  {
+    id: 4,
+    title: 'IB Chemistry HL',
+    description: 'Comprehensive coverage of IB Higher Level Chemistry with lab practice.',
+    image: '/subjects/chemistry.jpg',
+    stats: {
+      students: 760,
+      rating: 4.8,
+      lessons: 28,
+    },
+    tags: {
+      pacing: 'Standard',
+      duration: '4 Months',
+      benefit: 'Complete Prep',
+      field: 'Chemistry',
+    },
+    accentColor: 'cyan',
+  },
+  {
+    id: 5,
+    title: 'AP Biology Review',
+    description: 'Structured review of AP Biology concepts with practice exams.',
+    image: '/subjects/biology.jpg',
+    stats: {
+      students: 1120,
+      rating: 4.6,
+      lessons: 26,
+    },
+    tags: {
+      pacing: 'Flexible',
+      duration: '2 Months',
+      benefit: 'Exam Ready',
+      field: 'Biology',
+    },
+    accentColor: 'purple',
+  },
+  {
+    id: 6,
+    title: 'IB Global Politics',
+    description: 'In-depth exploration of global political concepts and case studies.',
+    image: '/subjects/social-science.jpg',
+    stats: {
+      students: 680,
+      rating: 4.7,
+      lessons: 30,
+    },
+    tags: {
+      pacing: 'Standard',
+      duration: '3 Months',
+      benefit: 'Comprehensive',
+      field: 'Social Science',
     },
     accentColor: 'green',
   },
@@ -92,30 +171,56 @@ const ProgramCard = ({ program }: ProgramCardProps) => {
 
   return (
     <motion.div
-      className={`group relative p-8 rounded-2xl dark:bg-white/5 bg-white border dark:border-white/10 border-gray-200 shadow-lg hover:shadow-xl dark:shadow-none backdrop-blur-md overflow-hidden transition-all duration-300 ${colors.border} ${colors.bg}`}
+      className={`group relative rounded-2xl dark:bg-white/5 bg-white border dark:border-white/10 border-gray-200 shadow-lg hover:shadow-xl dark:shadow-none backdrop-blur-md overflow-hidden transition-all duration-300 hover:scale-[1.02] ${colors.border} ${colors.bg}`}
     >
-      <div className={`absolute top-0 left-0 w-full h-full bg-gradient-to-br ${colors.gradient} to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100`}></div>
-      <div className="relative">
-        <h3 className="text-xl font-semibold mb-2">{program.title}</h3>
-        <p className="dark:text-white/60 text-black/60 text-sm mb-5">{program.description}</p>
-
-        <div className="flex flex-wrap gap-2 mb-5">
-          <span className={`px-2.5 py-1 ${colors.tagBg} ${colors.tagText} text-xs rounded-full`}>{program.tags.pacing}</span>
-          <span className={`px-2.5 py-1 ${colors.tagBg} ${colors.tagText} text-xs rounded-full`}>{program.tags.duration}</span>
-          <span className={`px-2.5 py-1 ${colors.tagBg} ${colors.tagText} text-xs rounded-full`}>{program.tags.benefit}</span>
-          <span className={`px-2.5 py-1 ${colors.tagBg} ${colors.tagText} text-xs rounded-full`}>{program.tags.field}</span>
+      {/* Image Section */}
+      <div className="relative h-40 overflow-hidden">
+        <Image 
+          src={program.image} 
+          alt={program.title}
+          fill
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+        <div className="absolute bottom-3 left-3">
+          <span className={`px-2 py-0.5 ${colors.tagBg} ${colors.tagText} text-[10px] font-medium rounded-full`}>
+            {program.tags.field}
+          </span>
         </div>
-        
-        <ul className="text-sm space-y-2 dark:text-white/70 text-black/70">
-          <li className="flex items-start gap-2.5">
-            <span className={`w-1.5 h-1.5 ${colors.bullet} rounded-full mt-1.5 flex-shrink-0`}></span>
-            <span>Feature one description</span>
-          </li>
-          <li className="flex items-start gap-2.5">
-            <span className={`w-1.5 h-1.5 ${colors.bullet} rounded-full mt-1.5 flex-shrink-0`}></span>
-            <span>Feature two description</span>
-          </li>
-        </ul>
+      </div>
+
+      {/* Content Section */}
+      <div className="p-4">
+        <h3 className="text-lg font-semibold mb-1.5">{program.title}</h3>
+        <p className="dark:text-white/60 text-black/60 text-xs mb-3 line-clamp-2">{program.description}</p>
+
+        {/* Stats Grid */}
+        <div className="grid grid-cols-3 gap-2 mb-4 py-3 border-y dark:border-white/10 border-gray-100">
+          <div className="text-center">
+            <div className="text-base font-semibold dark:text-white text-gray-900">{program.stats.students}</div>
+            <div className="text-[10px] dark:text-white/60 text-gray-600">Students</div>
+          </div>
+          <div className="text-center">
+            <div className="text-base font-semibold dark:text-white text-gray-900">{program.stats.rating}</div>
+            <div className="text-[10px] dark:text-white/60 text-gray-600">Rating</div>
+          </div>
+          <div className="text-center">
+            <div className="text-base font-semibold dark:text-white text-gray-900">{program.stats.lessons}</div>
+            <div className="text-[10px] dark:text-white/60 text-gray-600">Lessons</div>
+          </div>
+        </div>
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-1.5 mb-4">
+          <span className={`px-2 py-0.5 ${colors.tagBg} ${colors.tagText} text-[10px] font-medium rounded-full`}>{program.tags.pacing}</span>
+          <span className={`px-2 py-0.5 ${colors.tagBg} ${colors.tagText} text-[10px] font-medium rounded-full`}>{program.tags.duration}</span>
+          <span className={`px-2 py-0.5 ${colors.tagBg} ${colors.tagText} text-[10px] font-medium rounded-full`}>{program.tags.benefit}</span>
+        </div>
+
+        {/* Learn More Button */}
+        <button className={`w-full py-2 rounded-lg dark:bg-white/10 bg-gray-50 dark:text-white text-gray-900 text-xs font-medium hover:bg-opacity-90 transition-colors ${colors.border.replace('border', 'bg')} hover:text-white`}>
+          Learn More
+        </button>
       </div>
     </motion.div>
   );
@@ -125,7 +230,8 @@ export default function FeaturedPrograms() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  const categories = ['All', ...new Set(programs.map(p => p.tags.field))];
+  const orderedCategories = ['Math', 'Physics', 'Chemistry', 'Biology', 'Social Science'];
+  const categories = ['All', ...orderedCategories];
 
   const filteredPrograms = programs.filter(program => {
     const matchesCategory = selectedCategory === 'All' || program.tags.field === selectedCategory;
@@ -180,7 +286,7 @@ export default function FeaturedPrograms() {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {filteredPrograms.map((program) => (
           <ProgramCard
             key={program.id}
