@@ -29,7 +29,7 @@ const programs: Program[] = [
     id: 1,
     title: 'IB AI HL Math',
     description: 'A concentrated course covering the full IB Higher Level AI Mathematics curriculum.',
-    image: '/public/MATH.png',
+          image: '/MATH1.png',
     stats: {
       students: 1240,
       rating: 4.8,
@@ -47,7 +47,7 @@ const programs: Program[] = [
     id: 2,
     title: 'SAT Math Dash',
     description: 'A targeted sprint program designed to rapidly improve your SAT Math score.',
-    image: '/subjects/sat-math.jpg',
+    image: '/MATH2.png',
     stats: {
       students: 2150,
       rating: 4.9,
@@ -65,7 +65,7 @@ const programs: Program[] = [
     id: 3,
     title: 'AP Physics C Prep',
     description: 'A comprehensive review of both Mechanics and E&M for the AP exam.',
-    image: '/subjects/physics.jpg',
+    image: '/PHYSICS.png',
     stats: {
       students: 890,
       rating: 4.7,
@@ -83,7 +83,7 @@ const programs: Program[] = [
     id: 4,
     title: 'IB Chemistry HL',
     description: 'Comprehensive coverage of IB Higher Level Chemistry with lab practice.',
-    image: '/subjects/chemistry.jpg',
+    image: '/CHEMISTRY.png',
     stats: {
       students: 760,
       rating: 4.8,
@@ -101,7 +101,7 @@ const programs: Program[] = [
     id: 5,
     title: 'AP Biology Review',
     description: 'Structured review of AP Biology concepts with practice exams.',
-    image: '/subjects/biology.jpg',
+    image: '/BIOLOGY.png',
     stats: {
       students: 1120,
       rating: 4.6,
@@ -117,9 +117,9 @@ const programs: Program[] = [
   },
   {
     id: 6,
-    title: 'IB Global Politics',
+    title: 'IB History ',
     description: 'In-depth exploration of global political concepts and case studies.',
-    image: '/subjects/social-science.jpg',
+    image: '/HISTORY.png',
     stats: {
       students: 680,
       rating: 4.7,
@@ -179,7 +179,10 @@ const ProgramCard = ({ program }: ProgramCardProps) => {
           src={program.image} 
           alt={program.title}
           fill
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover object-[center_40%] transition-transform 
+          duration-300 group-hover:scale-105"
+          priority={program.id <= 3}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
         <div className="absolute bottom-3 left-3">
