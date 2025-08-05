@@ -4,6 +4,9 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Search } from 'lucide-react';
 import Image from 'next/image';
+import programsData from '../programs/programdata/programs.json';
+
+type AccentColor = 'cyan' | 'purple' | 'green';
 
 interface Program {
   id: number;
@@ -12,7 +15,7 @@ interface Program {
   image: string;
   stats: {
     students: number;
-    rating: number;
+    rating: number | "N/A";
     lessons: number;
   };
   tags: {
@@ -21,119 +24,9 @@ interface Program {
     benefit: string;
     field: string;
   };
-  accentColor: 'cyan' | 'purple' | 'green';
+  accentColor: AccentColor;
 }
 
-const programs: Program[] = [
-  {
-    id: 1,
-    title: 'IB AI HL Math',
-    description: 'A concentrated course covering the full IB Higher Level AI Mathematics curriculum.',
-          image: '/HIGHMATH.png',
-    stats: {
-      students: 1240,
-      rating: 4.8,
-      lessons: 24,
-    },
-    tags: {
-      pacing: 'Intensive',
-      duration: '1 Month',
-      benefit: 'Score Boost',
-      field: 'Math',
-    },
-    accentColor: 'cyan',
-  },
-  {
-    id: 2,
-    title: 'SAT Math Dash',
-    description: 'A targeted sprint program designed to rapidly improve your SAT Math score.',
-    image: '/SATMATH.png',
-    stats: {
-      students: 2150,
-      rating: 4.9,
-      lessons: 16,
-    },
-    tags: {
-      pacing: 'Sprint',
-      duration: 'Few Weeks',
-      benefit: 'Score Boost',
-      field: 'Math',
-    },
-    accentColor: 'purple',
-  },
-  {
-    id: 3,
-    title: 'AP Physics C Prep',
-    description: 'A comprehensive review of both Mechanics and E&M for the AP exam.',
-    image: '/PHYSICS.png',
-    stats: {
-      students: 890,
-      rating: 4.7,
-      lessons: 32,
-    },
-    tags: {
-      pacing: 'Slow Paced',
-      duration: '3 Months',
-      benefit: 'In-depth',
-      field: 'Physics',
-    },
-    accentColor: 'green',
-  },
-  {
-    id: 4,
-    title: 'IB Chemistry HL',
-    description: 'Comprehensive coverage of IB Higher Level Chemistry with lab practice.',
-    image: '/CHEMISTRY.png',
-    stats: {
-      students: 760,
-      rating: 4.8,
-      lessons: 28,
-    },
-    tags: {
-      pacing: 'Standard',
-      duration: '4 Months',
-      benefit: 'Complete Prep',
-      field: 'Chemistry',
-    },
-    accentColor: 'cyan',
-  },
-  {
-    id: 5,
-    title: 'AP Biology Review',
-    description: 'Structured review of AP Biology concepts with practice exams.',
-    image: '/BIOLOGY.png',
-    stats: {
-      students: 1120,
-      rating: 4.6,
-      lessons: 26,
-    },
-    tags: {
-      pacing: 'Flexible',
-      duration: '2 Months',
-      benefit: 'Exam Ready',
-      field: 'Biology',
-    },
-    accentColor: 'purple',
-  },
-  {
-    id: 6,
-    title: 'IB History ',
-    description: 'In-depth exploration of global political concepts and case studies.',
-    image: '/HISTORY.png',
-    stats: {
-      students: 680,
-      rating: 4.7,
-      lessons: 30,
-    },
-    tags: {
-      pacing: 'Standard',
-      duration: '3 Months',
-      benefit: 'Comprehensive',
-      field: 'Social Science',
-    },
-    accentColor: 'green',
-  },
-];
 
 const colorClasses = {
   cyan: {
@@ -179,9 +72,9 @@ const ProgramCard = ({ program }: ProgramCardProps) => {
           src={program.image} 
           alt={program.title}
           fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           className="object-cover object-[center_30%] transition-transform 
-          duration-300 group-hover:scale-105"
+          duration-300 group-hover:scale-100"
           priority={program.id <= 3}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
@@ -233,9 +126,10 @@ export default function FeaturedPrograms() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  const orderedCategories = ['Math', 'Physics', 'Chemistry', 'Biology', 'Social Science'];
+  const orderedCategories = ['Math', 'Physics', 'Chemistry', 'Biology', 'Social Science', 'College Apps'];
   const categories = ['All', ...orderedCategories];
 
+  const programs = programsData.programs as Program[];
   const filteredPrograms = programs.filter(program => {
     const matchesCategory = selectedCategory === 'All' || program.tags.field === selectedCategory;
     const matchesSearch = program.title.toLowerCase().includes(searchTerm.toLowerCase()) || program.description.toLowerCase().includes(searchTerm.toLowerCase());
