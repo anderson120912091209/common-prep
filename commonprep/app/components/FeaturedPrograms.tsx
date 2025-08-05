@@ -58,28 +58,28 @@ const programs: Program[] = [
 
 const colorClasses = {
   cyan: {
-    border: 'hover:border-cyan-400/50',
-    bg: 'hover:bg-cyan-900/10',
-    gradient: 'from-cyan-500/10',
-    bullet: 'bg-cyan-400',
-    tagBg: 'bg-cyan-500/20',
-    tagText: 'text-cyan-300',
+    border: 'dark:hover:border-cyan-400/50 hover:border-cyan-500',
+    bg: 'dark:hover:bg-cyan-900/10 hover:bg-cyan-50',
+    gradient: 'dark:from-cyan-500/10 from-cyan-100/50',
+    bullet: 'dark:bg-cyan-400 bg-cyan-600',
+    tagBg: 'dark:bg-cyan-500/20 bg-cyan-100',
+    tagText: 'dark:text-cyan-300 text-cyan-700',
   },
   purple: {
-    border: 'hover:border-purple-400/50',
-    bg: 'hover:bg-purple-900/10',
-    gradient: 'from-purple-500/10',
-    bullet: 'bg-purple-400',
-    tagBg: 'bg-purple-500/20',
-    tagText: 'text-purple-300',
+    border: 'dark:hover:border-purple-400/50 hover:border-purple-500',
+    bg: 'dark:hover:bg-purple-900/10 hover:bg-purple-50',
+    gradient: 'dark:from-purple-500/10 from-purple-100/50',
+    bullet: 'dark:bg-purple-400 bg-purple-600',
+    tagBg: 'dark:bg-purple-500/20 bg-purple-100',
+    tagText: 'dark:text-purple-300 text-purple-700',
   },
   green: {
-    border: 'hover:border-green-400/50',
-    bg: 'hover:bg-green-900/10',
-    gradient: 'from-green-500/10',
-    bullet: 'bg-green-400',
-    tagBg: 'bg-green-500/20',
-    tagText: 'text-green-300',
+    border: 'dark:hover:border-green-400/50 hover:border-green-500',
+    bg: 'dark:hover:bg-green-900/10 hover:bg-green-50',
+    gradient: 'dark:from-green-500/10 from-green-100/50',
+    bullet: 'dark:bg-green-400 bg-green-600',
+    tagBg: 'dark:bg-green-500/20 bg-green-100',
+    tagText: 'dark:text-green-300 text-green-700',
   },
 };
 
@@ -92,12 +92,12 @@ const ProgramCard = ({ program }: ProgramCardProps) => {
 
   return (
     <motion.div
-      className={`group relative p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md overflow-hidden transition-all duration-300 ${colors.border} ${colors.bg}`}
+      className={`group relative p-8 rounded-2xl dark:bg-white/5 bg-white border dark:border-white/10 border-gray-200 shadow-lg hover:shadow-xl dark:shadow-none backdrop-blur-md overflow-hidden transition-all duration-300 ${colors.border} ${colors.bg}`}
     >
       <div className={`absolute top-0 left-0 w-full h-full bg-gradient-to-br ${colors.gradient} to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100`}></div>
       <div className="relative">
         <h3 className="text-xl font-semibold mb-2">{program.title}</h3>
-        <p className="text-white/60 text-sm mb-5">{program.description}</p>
+        <p className="dark:text-white/60 text-black/60 text-sm mb-5">{program.description}</p>
 
         <div className="flex flex-wrap gap-2 mb-5">
           <span className={`px-2.5 py-1 ${colors.tagBg} ${colors.tagText} text-xs rounded-full`}>{program.tags.pacing}</span>
@@ -106,7 +106,7 @@ const ProgramCard = ({ program }: ProgramCardProps) => {
           <span className={`px-2.5 py-1 ${colors.tagBg} ${colors.tagText} text-xs rounded-full`}>{program.tags.field}</span>
         </div>
         
-        <ul className="text-sm space-y-2 text-white/70">
+        <ul className="text-sm space-y-2 dark:text-white/70 text-black/70">
           <li className="flex items-start gap-2.5">
             <span className={`w-1.5 h-1.5 ${colors.bullet} rounded-full mt-1.5 flex-shrink-0`}></span>
             <span>Feature one description</span>
@@ -138,7 +138,7 @@ export default function FeaturedPrograms() {
       <div className="text-center mb-12">
         <h2 className="text-5xl sm:text-5xl lg:text-5xl font-serif mb-4">Browse Our 
           Programs</h2>
-        <p className="text-lg text-white/70 font-light leading-relaxed max-w-3xl mx-auto">Standardized programs, customizable learning experiences.</p>
+        <p className="text-lg dark:text-white/70 text-black/70 font-light leading-relaxed max-w-3xl mx-auto">Standardized programs, customizable learning experiences.</p>
       </div>
       
       <div className="mb-10 px-4">
@@ -146,7 +146,7 @@ export default function FeaturedPrograms() {
           <div className="relative">
             <div className="pointer-events-none absolute inset-y-0 left-0 
             flex items-center pl-5">
-              <Search className="text-zinc-200 z-10" size={20} />
+              <Search className="dark:text-zinc-200 text-zinc-700 z-10" size={20} />
             </div>
             <input
               type="text"
@@ -154,10 +154,10 @@ export default function FeaturedPrograms() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full rounded-full border 
-              border-white/10 bg-white/5 py-4 pl-12 pr-5 text-white 
-              placeholder-white/50 backdrop-blur-md transition-all 
-              duration-300 focus:outline-none focus:ring-1  
-              focus:ring-white-400/100"
+              dark:border-white/10 border-gray-300 dark:bg-white/5 bg-white py-4 pl-12 pr-5 dark:text-white text-gray-900 
+              dark:placeholder-white/50 placeholder-gray-500 backdrop-blur-md transition-all 
+              duration-300 focus:outline-none focus:ring-2  
+              dark:focus:ring-white/50 focus:ring-emerald-400"
             />
           </div>
         </div>
@@ -172,7 +172,7 @@ export default function FeaturedPrograms() {
               duration-300 ease-in-out ${
               selectedCategory === category
                 ? 'bg-emerald-400 text-white shadow-lg'
-                : 'bg-white/5 hover:bg-white/10 text-white/70'
+                : 'dark:bg-white/5 bg-gray-100 dark:hover:bg-white/10 hover:bg-gray-200 dark:text-white/70 text-gray-700'
             }`}
           >
             {category}
@@ -190,7 +190,7 @@ export default function FeaturedPrograms() {
       </div>
       {filteredPrograms.length === 0 && (
         <div className="text-center py-16 col-span-full">
-          <p className="text-white/70">No programs found. 
+          <p className="dark:text-white/70 text-black/70">No programs found. 
           Try a different search or category.</p>
         </div>
       )}

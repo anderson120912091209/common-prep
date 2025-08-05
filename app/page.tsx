@@ -1,0 +1,1 @@
+// Replace hardcoded colors with var(--background), var(--foreground), etc. 

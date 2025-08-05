@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter, Inter_Tight, Special_Elite } from "next/font/google";
 import { Inter as InterMono } from 'next/font/google';
 import "./globals.css";
+import { ThemeProvider } from "./components/ThemeProvider";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -37,10 +38,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} ${inter_tight.variable} ${inter_mono.variable} ${special_elite.variable}`}>
-        <CustomCursor />
-        {children}
+    <html lang="en" suppressHydrationWarning className="h-full">
+      <body className={`${inter.variable} ${inter_tight.variable} ${inter_mono.variable} ${special_elite.variable} h-full`}>
+        <ThemeProvider>
+          <CustomCursor />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -1,14 +1,24 @@
 @import "tailwindcss";
 
 :root {
+  --background: #f0f8ff; /* bluish white */
+  --foreground: #0f172a; /* dark slate */
+}
+
+:root.dark {
   --background: #000000;
   --foreground: #ffffff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
+@theme {
+  /* Enable dark mode variant */
+  --default-color-scheme: light;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 @layer utilities {
@@ -25,14 +35,14 @@
     transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
     z-index: 0;
   }
+  
+  :root:not(.dark) .hover-glow::after {
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 70%);
+  }
+  
   .group:hover .hover-glow::after {
     transform: translate(-50%, -50%) scale(1);
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: black;
 }
 
 /* Custom font classes */
@@ -154,6 +164,11 @@ body {
   background-position: 0 90%; /* Positioned at the very bottom */
 }
 
+:root:not(.dark) .custom-underline-green {
+  background-image: linear-gradient(to right, #10b981, #10b981); /* Darker green for light mode */
+  background-size: 100% 2px; /* Slightly thicker for visibility */
+}
+
 /* Custom Cursor Styles */
 * {
   cursor: none !important;
@@ -165,7 +180,7 @@ body {
   left: 50%;
   width: 4px;
   height: 4px;
-  background-color: white;
+  background-color: var(--foreground);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -180,7 +195,7 @@ body {
   left: 50%;
   width: 20px;
   height: 20px;
-  border: 1px solid white;
+  border: 1px solid var(--foreground);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -190,7 +205,8 @@ body {
 }
 
 .custom-cursor-circle.pointer {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--foreground);
+  opacity: 0.2;
   transform: translate(-50%, -50%) scale(1.5);
 }
 
@@ -203,4 +219,17 @@ body {
     opacity: 1;
     transform: scale(1) translateY(0);
   }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
 }
