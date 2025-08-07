@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Search } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import programsData from '../programs/programdata/programs.json';
 
 type AccentColor = 'cyan' | 'purple' | 'green';
@@ -114,9 +115,14 @@ const ProgramCard = ({ program }: ProgramCardProps) => {
         </div>
 
         {/* Learn More Button */}
-        <button className={`w-full py-2 rounded-lg dark:bg-white/10 bg-gray-50 dark:text-white text-gray-900 text-xs font-medium hover:bg-opacity-90 transition-colors ${colors.border.replace('border', 'bg')} hover:text-white`}>
+        <Link 
+          href={`/programdetails/${program.title.toLowerCase().replace(/\s+/g, '-')}`}
+          className={`block w-full py-2 rounded-lg dark:bg-white/10 bg-gray-50 
+            dark:text-white text-gray-900 text-xs font-medium hover:bg-opacity-90 
+            transition-colors text-center ${colors.border.replace('border', 'bg')} hover:text-white`}
+        >
           Learn More
-        </button>
+        </Link>
       </div>
     </motion.div>
   );
