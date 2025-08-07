@@ -45,7 +45,7 @@ export default function Home() {
                   </span>{" "}
                   through software and artificial intelligence. 
                 </p>
-                <div className="flex flex-col items-center space-y-10 -mt-16">
+                <div className="flex flex-col items-center space-y-10 mt-12">
                   <div className="w-full max-w-2xl">
                     <CustomProgramChat />
                   </div>
