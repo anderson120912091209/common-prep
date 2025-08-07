@@ -21,7 +21,7 @@ export default function Home() {
           <div className="absolute inset-0 z-10 bg-gradient-to-b from-white via-white/0 to-white dark:from-black dark:via-black/0 dark:to-black pointer-events-none"></div>
 
           {/* Content */}
-          <div className="relative z-20 flex flex-col justify-between min-h-screen pt-32 pb-16 px-4 sm:px-6 lg:px-8">
+          <div className="relative z-20 flex flex-col justify-between min-h-screen pt-32 pb-4 px-4 sm:px-6 lg:px-8">
             {/* Top Content: Title & Description */}
             <div className="text-center">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif leading-tight mb-6">
@@ -45,15 +45,21 @@ export default function Home() {
                   </span>{" "}
                   through software and artificial intelligence. 
                 </p>
-                <div className="flex flex-col items-center space-y-0 -mt-16">
+                <div className="flex flex-col items-center space-y-10 -mt-16">
                   <div className="w-full max-w-2xl">
                     <CustomProgramChat />
                   </div>
                 </div>
               </div>
             </div>            
-          </div>
-        </section>
+                      </div>
+          </section>
+
+        <div className="text-center py-0">
+          <span className="font-serif italic text-2xl text-gray-400 dark:text-gray-500 tracking-widest">
+            or...
+          </span>
+        </div>
 
         {/* Featured Programs Section */}
         <section className="py-6">
@@ -61,42 +67,8 @@ export default function Home() {
             <FeaturedPrograms />
           </div>
         </section>
-
-        {/* AI Features Section */}
-        <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-          <div className="text-left max-w-4xl px-8 z-10 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-5xl font-serif mb-6">High<br/>Personalization</h2>
-              <p className="text-lg dark:text-white/70 text-black/70">Our platform leverages state-of-the-art artificial intelligence 
-              to create a study experience unlike any other. It learns your style, 
-              identifies weaknesses, and serves you questions that are perfectly tailored to you.</p>
-            </div>
-            <div className="dark:bg-white/5 bg-gray-50 p-8 rounded-2xl border dark:border-white/10 border-gray-200 backdrop-blur-md shadow-lg dark:shadow-none">
-              <h3 className="font-semibold mb-4">Dynamic Question Bank</h3>
-              <p className="text-sm dark:text-white/60 text-black/60">Over 10,000+ questions that adapt in difficulty based on your performance.</p>
-              <hr className="my-4 dark:border-white/10 border-black/10" />
-              <h3 className="font-semibold mb-4">Real-Time Feedback</h3>
-              <p className="text-sm dark:text-white/60 text-black/60">Instant analysis of your answers to help you understand mistakes immediately.</p>
-            </div>
-          </div>
-        </section>
         
-        {/* Testimonials Section */}
-        <section className="min-h-screen flex items-center justify-center">
-          <div className="text-center max-w-3xl px-8">
-            <h2 className="text-5xl font-serif mb-12">Trusted by Thousands</h2>
-            <div className="relative">
-              <div className="absolute -inset-8 opacity-20">
-                <div className="w-full h-full rounded-full border-2 border-dashed dark:border-white/20 border-black/20 animate-spin-slow"></div>
-              </div>
-              <blockquote className="text-2xl italic dark:text-white/80 text-black/80 max-w-2xl mx-auto">
-                "Common Prep's AI didn't just help me study, it taught me how to learn. I've never felt more confident going into an exam."
-              </blockquote>
-              <cite className="block mt-6 dark:text-white/60 text-black/60">- Alex Johnson, Admitted to Stanford</cite>
-            </div>
-          </div>
-        </section>
-
+  
         {/* Pricing Section */}
         <section className="min-h-screen flex items-center justify-center relative">
           <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r dark:from-blue-900/20 from-blue-100/20 dark:via-black via-transparent dark:to-black to-transparent"></div>

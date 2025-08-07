@@ -145,8 +145,7 @@ export default function FeaturedPrograms() {
   return (
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-12">
-        <h2 className="text-5xl sm:text-5xl lg:text-5xl font-serif mb-4">Browse Our 
-          Programs</h2>
+        <h2 className="text-5xl sm:text-5xl lg:text-5xl font-serif mb-4">Browse our programs</h2>
         <p className="text-lg dark:text-white/70 text-black/70 font-light leading-relaxed max-w-3xl mx-auto">Standardized and transparent programs, with customizable learning experiences.</p>
       </div>
       
