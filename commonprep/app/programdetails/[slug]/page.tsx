@@ -6,7 +6,8 @@ import { Clock, Users, BookOpen, Star, ChevronDown, ChevronRight, Target, Award,
 import programsData from '../../programs/programdata/programs.json';
 import syllabusData from '../../syllabus/ib-math-ai/ib-math-ai.json';
 import { chapterNotes, getChapterNote } from '../../syllabus/ib-math-ai/chapter-notes';
-import Navigation from '../../components/navigation';
+import VerticalSidebar from '../../components/VerticalSidebar';
+import { SidebarProvider, useSidebar } from '../../components/SidebarContext';
 import MathRenderer, { shouldRenderMath } from '../../components/MathRenderer';
 import MarkdownRenderer from '../../components/MarkdownRenderer';
 
@@ -32,8 +33,9 @@ interface SyllabusTopic {
   };
 }
 
-export default function ProgramDetails() {
+function ProgramDetailsContent() {
   const params = useParams();
+  const { isCollapsed } = useSidebar();
   const [activeTab, setActiveTab] = useState<Tab>('overview');
   const [expandedTopics, setExpandedTopics] = useState<Set<number>>(new Set());
   const [expandedUnits, setExpandedUnits] = useState<Set<string>>(new Set());
@@ -365,53 +367,9 @@ export default function ProgramDetails() {
 
   return (
     <div className="page-container">
-      <Navigation />
+      <VerticalSidebar />
       
-      <main className="pt-24 pb-12">
-        {/* Hero Section */}
-        <section className="max-w-7xl mx-auto px-6 mb-12">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-serif mb-4">{program.title}</h1>
-            <p className="text-lg opacity-70 max-w-3xl mx-auto">{program.description}</p>
-          </div>
-
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto mb-8">
-            <div className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
-              <Users className="w-6 h-6 mx-auto mb-2 opacity-60" />
-              <div className="text-2xl font-bold">{program.stats.students}</div>
-              <div className="text-sm opacity-60">Students</div>
-            </div>
-            <div className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
-              <Star className="w-6 h-6 mx-auto mb-2 opacity-60" />
-              <div className="text-2xl font-bold">{program.stats.rating}</div>
-              <div className="text-sm opacity-60">Rating</div>
-            </div>
-            <div className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
-              <BookOpen className="w-6 h-6 mx-auto mb-2 opacity-60" />
-              <div className="text-2xl font-bold">{program.stats.lessons}</div>
-              <div className="text-sm opacity-60">Lessons</div>
-            </div>
-            <div className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
-              <Calendar className="w-6 h-6 mx-auto mb-2 opacity-60" />
-              <div className="text-2xl font-bold">{program.tags.duration}</div>
-              <div className="text-sm opacity-60">Duration</div>
-            </div>
-          </div>
-
-          {/* Tags */}
-          <div className="flex justify-center flex-wrap gap-3">
-            <span className="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-full text-sm font-medium">
-              {program.tags.pacing}
-            </span>
-            <span className="px-4 py-2 bg-purple-500/20 text-purple-400 rounded-full text-sm font-medium">
-              {program.tags.benefit}
-            </span>
-            <span className="px-4 py-2 bg-green-500/20 text-green-400 rounded-full text-sm font-medium">
-              {program.tags.field}
-            </span>
-          </div>
-        </section>
+      <main className={`${isCollapsed ? 'pl-16' : 'pl-64'} pt-6 pb-12 transition-all duration-300`}>
 
         {/* Navigation Tabs */}
         <section className="max-w-7xl mx-auto px-6 mb-8">
@@ -520,5 +478,13 @@ export default function ProgramDetails() {
         </section>
       </main>
     </div>
+  );
+}
+
+export default function ProgramDetails() {
+  return (
+    <SidebarProvider>
+      <ProgramDetailsContent />
+    </SidebarProvider>
   );
 }

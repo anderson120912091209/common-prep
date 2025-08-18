@@ -102,6 +102,42 @@ body {
   background: rgba(255, 255, 255, 0.3);
 }
 
+/* Collapsible Navigation Animations */
+@keyframes logo-scale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.8);
+  }
+}
+
+@keyframes expand-glow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+.nav-collapsed {
+  animation: logo-scale 0.5s ease-in-out;
+}
+
+.nav-glow {
+  animation: expand-glow 2s ease-in-out infinite;
+}
+
+/* Smooth width transitions for nav */
+.nav-transition {
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              padding 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              max-width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 @layer utilities {
   .hover-glow::after {
     content: '';

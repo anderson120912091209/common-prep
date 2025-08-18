@@ -3,10 +3,13 @@
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import type { Curriculum } from '@/lib/types';
+import VerticalSidebar from '@/app/components/VerticalSidebar';
+import { SidebarProvider, useSidebar } from '@/app/components/SidebarContext';
 
-export default function ProductPage() {
+function ProductPageContent() {
   const params = useParams();
   const router = useRouter();
+  const { isCollapsed } = useSidebar();
   const [curriculum, setCurriculum] = useState<Curriculum | null>(null);
 
   useEffect(() => {
@@ -26,11 +29,18 @@ export default function ProductPage() {
   }, [params, router]);
 
   if (!curriculum) {
-    return <div className="page-container p-6">Generating your personalized curriculum...</div>;
+    return (
+      <div className="page-container">
+        <VerticalSidebar />
+        <div className={`p-6 ${isCollapsed ? 'pl-16' : 'pl-64'} transition-all duration-300`}>Generating your personalized curriculum...</div>
+      </div>
+    );
   }
 
   return (
-    <div className="page-container p-6">
+    <div className="page-container">
+      <VerticalSidebar />
+      <div className={`p-6 ${isCollapsed ? 'pl-16' : 'pl-64'} transition-all duration-300`}>
       <h1 className="text-3xl font-serif mb-2">{curriculum.title}</h1>
       <p className="text-sm opacity-70 mb-6">{curriculum.description}</p>
 
@@ -74,7 +84,16 @@ export default function ProductPage() {
           </div>
         ))}
       </div>
+      </div>
     </div>
+  );
+}
+
+export default function ProductPage() {
+  return (
+    <SidebarProvider>
+      <ProductPageContent />
+    </SidebarProvider>
   );
 }
 
