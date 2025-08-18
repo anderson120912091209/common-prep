@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Plus, Paperclip, Globe, ArrowUp } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const examplePrompts = [
   "I want to learn IB Biology in 4 months with connections to topics in Olympiad Biology",
@@ -13,6 +14,30 @@ const examplePrompts = [
 export default function CustomProgramChat() {
   const [inputValue, setInputValue] = useState('');
   const [isFocused, setIsFocused] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+
+  const handleSubmit = async () => {
+    if (!inputValue.trim() || isLoading) return;
+    setIsLoading(true);
+    try {
+      const res = await fetch('/api/generate-curriculum', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ goal: inputValue })
+      });
+      if (!res.ok) throw new Error('Failed to generate curriculum');
+      const { id, curriculum } = await res.json();
+      if (typeof window !== 'undefined') {
+        localStorage.setItem(`curriculum:${id}`, JSON.stringify(curriculum));
+      }
+      router.push(`/product/${id}`);
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className="w-full max-w-4xl mx-auto py-4">
@@ -33,19 +58,28 @@ export default function CustomProgramChat() {
               onChange={(e) => setInputValue(e.target.value)}
               onFocus={() => setIsFocused(true)}
               onBlur={() => setIsFocused(false)}
+              onKeyDown={(e) => { if (e.key === 'Enter') handleSubmit(); }}
               placeholder="Describe your perfect learning program..."
               className="flex-1 bg-transparent text-white placeholder:text-white/50 
                 focus:outline-none text-lg"
             />
             <button 
+              onClick={handleSubmit}
               className={`p-2 rounded-lg transition-all duration-200 ${
-                inputValue 
+                inputValue && !isLoading
                   ? 'bg-white text-black hover:bg-white/90' 
                   : 'text-white/30'
               }`}
-              disabled={!inputValue}
+              disabled={!inputValue || isLoading}
             >
-              <ArrowUp className="w-5 h-5" />
+              {isLoading ? (
+                <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                </svg>
+              ) : (
+                <ArrowUp className="w-5 h-5" />
+              )}
             </button>
           </div>
 
@@ -64,7 +98,7 @@ export default function CustomProgramChat() {
 
         {/* Example Tags */}
         <div className="mt-4 space-y-2">
-          <p className="text-xs py-4 text-white/50 font-medium uppercase tracking-wider"> Try these examples: </p>
+          <p className="text-xs py-4 text-white/50 font-medium tracking-wider"> Try these examples: </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             {examplePrompts.map((prompt, index) => (
               <button

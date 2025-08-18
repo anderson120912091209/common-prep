@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "katex/dist/katex.min.css";
 
 :root {
   --background: #f0f8ff; /* bluish white */
@@ -27,6 +28,78 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   transition: background-color 0.3s, color 0.3s;
+}
+
+/* KaTeX styling for math rendering */
+.katex {
+  font-size: 1em;
+  color: inherit;
+}
+
+.katex-display {
+  margin: 0.5em 0;
+  text-align: center;
+}
+
+/* Ensure KaTeX works well in dark mode */
+:root.dark .katex {
+  color: var(--foreground);
+}
+
+:root.dark .katex .base {
+  color: var(--foreground);
+}
+
+/* Custom math content styling */
+.math-content {
+  font-family: "KaTeX_Main", "Times New Roman", serif;
+}
+
+/* Improve inline math spacing */
+.katex .katex-html {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+/* Better rendering for mathematical symbols */
+.katex .mord, .katex .mop, .katex .mbin, .katex .mrel {
+  color: inherit;
+}
+
+/* Markdown content styling */
+.markdown-content {
+  line-height: 1.6;
+}
+
+.markdown-content .katex {
+  font-size: 1.1em;
+}
+
+.markdown-content .katex-display {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Scrollbar styling for notes panel */
+.overflow-y-auto::-webkit-scrollbar {
+  width: 6px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 @layer utilities {

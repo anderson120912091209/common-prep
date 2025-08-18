@@ -1,0 +1,460 @@
+{
+    "course": "IB DP Mathematics: Applications and Interpretation (AI) — HL",
+    "structure": {
+      "topics": [
+        {
+          "id": 1,
+          "name": "Number and algebra",
+          "SL": {
+            "recommended_hours": 16,
+            "notes": "SL1.1–SL1.5 are common to AA and AI",
+            "units": [
+              {
+                "code": "SL1.1",
+                "content": [
+                  "Operations with numbers in the form a × 10^k (1 ≤ a < 10, k ∈ ℤ).",
+                  "Calculator/computer notation like 5.2E30 is not acceptable; write 5.2 × 10^30."
+                ]
+              },
+              {
+                "code": "SL1.2",
+                "content": [
+                  "Arithmetic sequences and series.",
+                  "Formulae for nth term and sum of first n terms.",
+                  "Sigma notation for sums of arithmetic sequences.",
+                  "Applications (e.g., simple interest); analysis/interpretation where data are only approximately arithmetic."
+                ]
+              },
+              {
+                "code": "SL1.3",
+                "content": [
+                  "Geometric sequences and series.",
+                  "Formulae for nth term and sum of first n terms.",
+                  "Sigma notation for sums of geometric sequences."
+                ]
+              }
+            ]
+          },
+          "AHL": {
+            "units": [
+              {
+                "code": "AHL1.10",
+                "content": [
+                  "Simplifying expressions with rational exponents (numeric and algebraic)."
+                ]
+              },
+              {
+                "code": "AHL1.11",
+                "content": [
+                  "Sum of infinite geometric sequences.",
+                  "Links to limits and Markov chains."
+                ]
+              },
+              {
+                "code": "AHL1.12",
+                "content": [
+                  "Complex numbers i with i^2 = −1.",
+                  "Cartesian form z = a + bi; real/imaginary parts, conjugate, modulus, argument.",
+                  "Sums, differences, products, quotients (by hand and technology); powers in Cartesian form with technology.",
+                  "Argand diagram; complex roots of quadratics with negative discriminant."
+                ]
+              },
+              {
+                "code": "AHL1.13",
+                "content": [
+                  "Modulus–argument (polar) form z = r(cos θ + i sin θ) = r·cis θ.",
+                  "Exponential form z = r e^{iθ}.",
+                  "Convert between Cartesian, polar, exponential; products/quotients/powers in polar/exponential.",
+                  "Adding sinusoids with same frequency but different phase."
+                ]
+              },
+              {
+                "code": "AHL1.14",
+                "content": [
+                  "Matrices: elements, rows, columns, order (m×n).",
+                  "Equality, addition, subtraction, scalar multiplication; matrix multiplication and its properties (associative, distributive, non-commutative).",
+                  "Identity and zero matrices.",
+                  "Determinants/inverses of n×n with technology; by hand for 2×2.",
+                  "Solve Ax = b with inverses; modelling (coding/decoding, systems of equations)."
+                ]
+              },
+              {
+                "code": "AHL1.15",
+                "content": [
+                  "Eigenvalues and eigenvectors (2×2); characteristic polynomial.",
+                  "Diagonalization (distinct real eigenvalues).",
+                  "Applications to powers of matrices (e.g., population movement, predator–prey).",
+                  "M^n = P D^n P^{-1} (P eigenvectors, D eigenvalues)."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "name": "Functions",
+          "SL": {
+            "recommended_hours": 31,
+            "notes": "SL2.1–SL2.4 are common to AA and AI",
+            "units": [
+              {
+                "code": "SL2.1",
+                "content": [
+                  "Equations of a straight line; gradient, intercepts.",
+                  "Parallel m1 = m2; perpendicular m1·m2 = −1.",
+                  "Forms: y = mx + c; ax + by + d = 0; y − y1 = m(x − x1)."
+                ]
+              },
+              {
+                "code": "SL2.2",
+                "content": [
+                  "Concept of function, domain, range, graph.",
+                  "Function notation f(x), v(t), C(n).",
+                  "Function as model; inverse function informally (reflection in y = x); f^{-1}(x) notation; 1–1 requirement."
+                ]
+              },
+              {
+                "code": "SL2.3",
+                "content": [
+                  "Graph of a function; equation y = f(x).",
+                  "Distinguish ‘draw’ vs ‘sketch’. (Further detail continues in guide.)"
+                ]
+              }
+            ]
+          },
+          "AHL": {
+            "recommended_hours": 11,
+            "units": [
+              {
+                "code": "AHL2.7",
+                "content": [
+                  "Composite functions (f ∘ g)(x) and inverse function f^{-1}; domain restriction; identities f ∘ f^{-1}(x) = f^{-1} ∘ f(x) = x."
+                ]
+              },
+              {
+                "code": "AHL2.8",
+                "content": [
+                  "Transformations of graphs for all covered functions: translations y = f(x) + b, y = f(x − a); reflections y = −f(x), y = f(−x); vertical stretch y = p f(x); horizontal stretch y = f(qx); composite transformations and order."
+                ]
+              },
+              {
+                "code": "AHL2.9",
+                "content": [
+                  "Additional modelling functions beyond SL:",
+                  "• Exponential models for half-life.",
+                  "• Natural logarithmic models f(x) = a + b ln x.",
+                  "• Sinusoidal models f(x) = a sin(bx − c) + d (radian default unless degree sign used); period 2π/b."
+                ]
+              },
+              {
+                "code": "AHL2.10",
+                "content": [
+                  "Logarithmic scaling for very large/small numbers.",
+                  "Linearization with log/semilog to identify exponential vs power relationships; using best-fit lines to determine parameters.",
+                  "Interpretation of log–log and semi-log plots."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "name": "Geometry and trigonometry",
+          "SL": {
+            "recommended_hours": 18,
+            "notes": "SL3.1–SL3.3 common to AA and AI",
+            "units": [
+              {
+                "code": "SL3.1",
+                "content": [
+                  "Distance and midpoint in 3D.",
+                  "Volume/surface area of: right pyramid, right cone, sphere, hemisphere, combinations.",
+                  "Angle between two lines or a line and a plane.",
+                  "Right-angled trig only for 3D in SL exams."
+                ]
+              },
+              {
+                "code": "SL3.2",
+                "content": [
+                  "Sine/cosine/tangent in right triangles.",
+                  "Sine rule a/sinA = b/sinB = c/sinC; cosine rule c^2 = a^2 + b^2 − 2ab cos C, cos C = (a^2 + b^2 − c^2)/(2ab).",
+                  "Area of triangle ½ab sin C (no ambiguous case at SL)."
+                ]
+              },
+              {
+                "code": "SL3.3",
+                "content": [
+                  "Applications of right and non-right-angled trigonometry incl. Pythagoras.",
+                  "Angles of elevation/depression; labelled diagram construction; bearings contexts."
+                ]
+              },
+              {
+                "code": "SL3.4",
+                "content": [
+                  "Circle: arc length; sector area (radians not required at SL)."
+                ]
+              },
+              {
+                "code": "SL3.5",
+                "content": [
+                  "Perpendicular bisector equations (two points or line segment with midpoint)."
+                ]
+              },
+              {
+                "code": "SL3.6",
+                "content": [
+                  "Voronoi diagrams: sites, vertices, edges, cells; adding a site; nearest-neighbour interpolation; ‘toxic waste dump’ applications; exam conventions for boundaries/areas/closest site."
+                ]
+              }
+            ]
+          },
+          "AHL": {
+            "recommended_hours": 28,
+            "units": [
+              {
+                "code": "AHL3.7",
+                "content": [
+                  "Radians: definition; degrees↔radians conversion.",
+                  "Arc length and sector area in radians."
+                ]
+              },
+              {
+                "code": "AHL3.8",
+                "content": [
+                  "Unit-circle definitions of sin θ, cos θ; Pythagorean identity.",
+                  "tan θ = sin θ / cos θ; ambiguous case of sine rule.",
+                  "Graphical solution of trig equations over finite intervals."
+                ]
+              },
+              {
+                "code": "AHL3.14",
+                "content": [
+                  "Graph theory basics: graphs, vertices, edges; degree; simple/complete/weighted graphs; directed graphs (in-/out-degree); subgraphs; trees; represent real structures as graphs."
+                ]
+              },
+              {
+                "code": "AHL3.15",
+                "content": [
+                  "Adjacency matrices; number of k-length walks from entries of A^k; weighted adjacency; construct transition matrices for strongly-connected graphs; PageRank as an example."
+                ]
+              },
+              {
+                "code": "AHL3.16",
+                "content": [
+                  "Tree and cycle algorithms for undirected graphs.",
+                  "Walks/trails/paths/circuits/cycles; Eulerian trails/circuits; Hamiltonian paths/cycles.",
+                  "MST algorithms (Kruskal, Prim, matrix method for Prim).",
+                  "Chinese postman problem (shortest route around weighted graph with up to four odd vertices) and justification of algorithm choice.",
+                  "Travelling Salesman Problem (TSP): nearest-neighbour (upper bound), deleted-vertex (lower bound); reduce practical cases to classical form."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 4,
+          "name": "Statistics and probability",
+          "SL": {
+            "recommended_hours": 36,
+            "notes": "SL4.1–SL4.9 common to AA and AI (plus SL4.10–SL4.11 specific tests)",
+            "units": [
+              {
+                "code": "SL4.1",
+                "content": [
+                  "Population, sample, random sample; discrete/continuous data; reliability/bias; handling missing/erroneous data."
+                ]
+              },
+              {
+                "code": "SL4.6",
+                "content": [
+                  "Venn/tree/sample-space/tables of outcomes to compute probabilities.",
+                  "Combined events P(A∪B)=P(A)+P(B)−P(A∩B); mutually exclusive events; conditional probability P(A|B)=P(A∩B)/P(B); independent events P(A∩B)=P(A)P(B); with/without replacement."
+                ]
+              },
+              {
+                "code": "SL4.7",
+                "content": [
+                  "Discrete random variables and distributions.",
+                  "Expected value E[X] for discrete data; recognition of ‘fair’ games; probability-distribution specification formats."
+                ]
+              },
+              {
+                "code": "SL4.8",
+                "content": [
+                  "Binomial distribution; mean and variance; appropriateness conditions; find probabilities using technology."
+                ]
+              },
+              {
+                "code": "SL4.9",
+                "content": [
+                  "Normal distribution and curve; empirical 68–95–99.7 rule.",
+                  "Normal probability and inverse-normal calculations using technology (no z-standardization required)."
+                ]
+              },
+              {
+                "code": "SL4.11",
+                "content": [
+                  "Hypotheses H0 and H1; significance levels; p-values.",
+                  "χ² test of independence (contingency tables, df, critical values) and χ² goodness-of-fit (exam conventions).",
+                  "t-test (two means, one- or two-tailed; use technology); express hypotheses properly; compare p-values or χ² to critical values."
+                ]
+              }
+            ]
+          },
+          "AHL": {
+            "units": [
+              {
+                "code": "AHL4.16",
+                "content": [
+                  "Confidence intervals for mean of normal population.",
+                  "Use normal (σ known) or t (σ unknown) regardless of n; interpret in context."
+                ]
+              },
+              {
+                "code": "AHL4.17",
+                "content": [
+                  "Poisson distribution (mean = variance); sum of independent Poissons; when Poisson is appropriate.",
+                  "Select among normal, binomial, Poisson based on context."
+                ]
+              },
+              {
+                "code": "AHL4.18",
+                "content": [
+                  "Critical values/regions; hypothesis tests:",
+                  "• Population mean (normal with σ known; t when σ unknown; paired/unpaired).",
+                  "• Proportion (binomial, one-tailed).",
+                  "• Mean for Poisson (one-tailed).",
+                  "• Test ρ = 0 for bivariate normal using technology.",
+                  "Type I/II errors and their probabilities (normal with known variance, Poisson, binomial).",
+                  "One-tailed tests only for discrete distributions; critical regions chosen to control Type I error."
+                ]
+              },
+              {
+                "code": "AHL4.19",
+                "content": [
+                  "Transition matrices and powers; state after n steps s_n = T^n s_0.",
+                  "Transition diagrams; regular Markov chains; initial state matrices; steady-state/long-term probabilities via repeated multiplication and via eigenvector for eigenvalue 1."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 5,
+          "name": "Calculus",
+          "SL": {
+            "recommended_hours": 19,
+            "notes": "SL5.1–SL5.5 common to AA and AI; (guide continues with SL5.6–SL5.7 optimisation/area concepts in context)",
+            "units": [
+              {
+                "code": "SL5.1",
+                "content": [
+                  "Introduction to limits (estimate from tables/graphs; no formal analytic limit techniques).",
+                  "Derivative as gradient function and rate of change; notation dy/dx, f′(x), etc.; informal gradient as a limit."
+                ]
+              },
+              {
+                "code": "SL5.2",
+                "content": [
+                  "Increasing/decreasing functions; graphical interpretation of f′(x) > 0, = 0, < 0; identify intervals of increase/decrease."
+                ]
+              }
+            ]
+          },
+          "AHL": {
+            "aim": "Extend SL differential/integral calculus for modelling/interpretation.",
+            "units": [
+              {
+                "code": "AHL5.9",
+                "content": [
+                  "Derivatives of sin x, cos x, tan x, e^x, ln x, x^n (n∈ℚ).",
+                  "Chain, product, quotient rules; related rates; links to maxima/minima and optimisation."
+                ]
+              },
+              {
+                "code": "AHL5.10",
+                "content": [
+                  "Second derivative d²y/dx² and f″(x); second derivative test; concavity and inflection; links to kinematics and 2nd-order DEs."
+                ]
+              },
+              {
+                "code": "AHL5.11",
+                "content": [
+                  "Definite/indefinite integrals of x^n (n∈ℚ, including n = −1), sin x, cos x, sec^2 x, e^x.",
+                  "Integration by inspection/substitution of the form ∫ f(g(x)) g′(x) dx (e.g., ∫sin(2x+5)dx, ∫ dx/(3x+2), ∫ 4x sin(x^2) dx, ∫ (sin x / cos x) dx)."
+                ]
+              },
+              {
+                "code": "AHL5.12",
+                "content": [
+                  "Area under a curve (including negative integrals); volumes of revolution about x- or y-axis: V = ∫_a^b πy^2 dx or ∫_a^b πx^2 dy."
+                ]
+              },
+              {
+                "code": "AHL5.15",
+                "content": [
+                  "Slope fields (direction fields); read and interpret slope-field diagrams."
+                ]
+              },
+              {
+                "code": "AHL5.16",
+                "content": [
+                  "Euler’s method for first-order DEs; numerical solutions dy/dx = f(x,y); spreadsheet use; extend to coupled systems dx/dt = f1(x,y,t), dy/dt = f2(x,y,t)."
+                ]
+              },
+              {
+                "code": "AHL5.17",
+                "content": [
+                  "Phase portraits for linear systems dx/dt = ax+by, dy/dt = cx+dy.",
+                  "Qualitative behaviour for distinct/complex/imaginary eigenvalues; trajectories, equilibria, stability, saddle points; exact solutions required for real-distinct eigenvalues; link to eigenvectors/eigenvalues."
+                ]
+              },
+              {
+                "code": "AHL5.18",
+                "content": [
+                  "Second-order DEs by Euler’s method via system form.",
+                  "Investigate d²x/dt² + a dx/dt + b = 0 via phase-portrait ideas; physical interpretations."
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internal_assessment": {
+        "component": "Individual exploration (SL and HL)",
+        "purpose": "Apply skills/knowledge to a personally chosen area of mathematics without exam constraints; integrated with normal teaching.",
+        "time_allocation": "Recommended ~10–15 hours in total (teacher guidance, class time, consultations, progress review, authenticity checks).",
+        "length_guidance": "≈12–20 pages double-spaced (quality of mathematical writing over length).",
+        "assessment_criteria": "Criteria A–E (A–D same for SL and HL; E differs).",
+        "authenticity_guidelines": "Must be student’s own work; teacher support limited to advice on one draft; academic honesty and authenticity confirmation required."
+      },
+      "external_assessment_HL": {
+        "papers": [
+          {
+            "paper": 1,
+            "duration": "2 hours",
+            "weighting": "30%",
+            "type": "Compulsory short-response questions; GDC required but not always used; breadth across topics; 110 marks."
+          },
+          {
+            "paper": 2,
+            "duration": "2 hours",
+            "weighting": "30%",
+            "type": "Compulsory extended-response questions; GDC required; deeper assessment; 110 marks."
+          },
+          {
+            "paper": 3,
+            "notes": "HL investigation paper (details follow in full guide; calculators allowed).",
+            "weighting": "20%",
+            "type": "Extended problem-solving/investigative tasks aligned with HL content."
+          }
+        ],
+        "general": [
+          "External papers collectively 80% of final grade.",
+          "GDC required for all papers; formula booklet provided.",
+          "Marks awarded for method/accuracy/answers/reasoning; show working."
+        ]
+      }
+    }
+  }
+  

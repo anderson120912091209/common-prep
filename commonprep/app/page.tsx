@@ -12,8 +12,8 @@ export default function Home() {
         <section className="relative min-h-screen overflow-hidden">
           {/* Background Spline */}
           <div className="absolute inset-0 z-0">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vh] min-w-[1000px] min-h-[1000px]">
-              <Spline scene="https://prod.spline.design/42kPNCpMxaBLAv9K/scene.splinecode" />
+            <div className="absolute scale-110 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vh] min-w-[1000px] min-h-[1000px]">
+               <Spline scene="https://prod.spline.design/Dx9d1ZqtxSab9MfZ/scene.splinecode" /> 
             </div>
           </div>
           

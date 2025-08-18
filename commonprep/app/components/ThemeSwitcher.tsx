@@ -20,7 +20,7 @@ export function ThemeSwitcher() {
   return (
     <button 
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="p-2 rounded-full border dark:border-white/25 border-gray-300 backdrop-blur-sm dark:hover:bg-white/10 hover:bg-gray-100 transition-colors"
+      className="p-2 rounded-full border dark:border-white/10 border-gray-300 backdrop-blur-sm dark:hover:bg-white/10 hover:bg-gray-100 transition-colors"
     >
       {theme === 'dark' ? <Sun size={18} className="text-white" /> : <Moon size={18} className="text-black" />}
     </button>

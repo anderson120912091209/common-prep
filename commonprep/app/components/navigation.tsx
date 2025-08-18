@@ -24,7 +24,8 @@ const Navigation = () => {
 
         {/* Auth Buttons & Language Switcher */}
         <div className="flex items-center space-x-4">
-          <Link href="/get-started" className="px-5 py-1.5 rounded-full border dark:border-white/25 border-gray-300 dark:text-white text-gray-700 text-sm backdrop-blur-sm dark:hover:bg-white/10 hover:bg-gray-100 transition-colors">
+          <Link href="/get-started" className="px-5 py-1.5 rounded-full border
+           dark:border-white/10 border-gray-300 dark:text-white text-gray-700 text-sm backdrop-blur-sm dark:hover:bg-white/10 hover:bg-gray-100 transition-colors">
             Get Started
           </Link>
           <ThemeSwitcher />
