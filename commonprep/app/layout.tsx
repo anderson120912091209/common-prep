@@ -1,4 +1,4 @@
-import CustomCursor from "@/app/components/CustomCursor";
+
 import type { Metadata } from "next";
 import { Inter, Inter_Tight, Special_Elite } from "next/font/google";
 import { Inter as InterMono } from 'next/font/google';
@@ -41,7 +41,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="h-full">
       <body className={`${inter.variable} ${inter_tight.variable} ${inter_mono.variable} ${special_elite.variable} h-full`}>
         <ThemeProvider>
-          <CustomCursor />
         {children}
         </ThemeProvider>
       </body>

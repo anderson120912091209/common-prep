@@ -286,11 +286,14 @@ body {
   background-size: 100% 2px; /* Slightly thicker for visibility */
 }
 
-/* Custom Cursor Styles */
+/* Custom Cursor Styles - Disabled */
+/* 
 * {
   cursor: none !important;
 }
+*/
 
+/* Custom cursor styles - disabled 
 .custom-cursor-dot {
   position: fixed;
   top: 50%;
@@ -326,6 +329,7 @@ body {
   opacity: 0.2;
   transform: translate(-50%, -50%) scale(1.5);
 }
+*/
 
 @keyframes fadeInScaleUp {
   from {
